@@ -1,4 +1,6 @@
 .headerBackground {
+    width: 100%;
+    position: absolute;
     height: 60px;
     background-color: #282c34;
     display: flex;
