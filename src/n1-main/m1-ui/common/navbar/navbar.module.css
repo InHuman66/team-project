@@ -1,0 +1,32 @@
+.headerBackground {
+    height: 60px;
+    background-color: #282c34;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.blockLinks {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.Link {
+    transition: color 0.3s;
+    padding: 0 15px;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+}
+.Link:hover{
+    cursor: pointer;
+    transition: color 0.3s;
+    color: dodgerblue;
+}
+.activeNavlink {
+    padding: 0 15px;
+    color: gold;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+}
