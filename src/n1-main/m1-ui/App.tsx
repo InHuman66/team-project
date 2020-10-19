@@ -7,6 +7,7 @@ import PasswordRecovery from "./common/password-recovery/password-recovery";
 import Profile from "./common/profile/profile";
 import Registration from "./common/registration/registration";
 import {Navbar} from "./common/navbar/navbar";
+import LoginContainer from "./common/login/loginContainer";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Route  path={'/password-recovery'} render={()=> <PasswordRecovery/> }/>
       <Route  path={'/profile'} render={()=> <Profile/> }/>
       <Route  path={'/registration'} render={()=> <Registration/> }/>
-      <Route  path={'/login'} render={()=> <Login/> }/>
+      <Route  path={'/login'} render={()=> <LoginContainer/> }/>
     </div>
   );
 }
