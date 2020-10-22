@@ -5,6 +5,7 @@ import {newPasswordReducer} from "../n2-reducers/new-password-reducer";
 import {passwordRecoveryReducer} from "../n2-reducers/password-recovery-reducer";
 import {profileReducer} from "../n2-reducers/profile-reducer";
 import { registrationReducer } from "../n2-reducers/registration-reducer";
+import {appReducer} from "../n2-reducers/app-reducer";
 export type ReduxStateType = ReturnType<typeof reducersBatch>
 
 
@@ -17,6 +18,7 @@ let  reducersBatch = combineReducers({
     passwordRecovery: passwordRecoveryReducer,
     profile: profileReducer,
     registration: registrationReducer,
+    appReducer: appReducer,
 
 });
 
