@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Login from './common/login/login';
@@ -8,8 +8,17 @@ import Profile from "./common/profile/profile";
 import Registration from "./common/registration/registration";
 import {Navbar} from "./common/navbar/navbar";
 import LoginContainer from "./common/login/loginContainer";
+import {useDispatch} from "react-redux";
+import {isAuthTC} from "../m2-bll/n2-reducers/app-reducer";
+
+
 
 function App() {
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(isAuthTC())
+    },[])
+
   return (
     <div className="App">
         <Navbar/>

@@ -25,6 +25,7 @@ let  reducersBatch = combineReducers({
 
 export  const  store = createStore(reducersBatch, applyMiddleware(thunkMiddleware));
 
+export type AppRootStateType = ReturnType<typeof reducersBatch>
 
 let state = store.getState()
 

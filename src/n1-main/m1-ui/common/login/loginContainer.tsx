@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useFormik} from "formik";
 import Login from './login';
 import { loginTC } from '../../../m2-bll/n2-reducers/login-reducer';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import { AppRootStateType } from '../../../m2-bll/n1-state/redux-state';
+import { Redirect } from 'react-router-dom';
 
 export type FormikValuesType ={
     email: string
@@ -12,6 +14,9 @@ export type FormikValuesType ={
 
 
 const LoginContainer= () => {
+    const isLogged= useSelector<AppRootStateType>(state => state.appReducer.isAuth)
+    const isLoading= useSelector<AppRootStateType, boolean>(state => state.login.isLoading)
+    const messageError= useSelector<AppRootStateType, boolean>(state => state.login.messagesError)
     const dispatch = useDispatch()
     type FormikErrorType = {
         email?: string
@@ -44,9 +49,13 @@ const LoginContainer= () => {
             dispatch(loginTC({rememberMe: values.rememberMe, login:values.email , password:values.password}))
         },
     });
+    if (isLogged){
+        return <Redirect to={'/profile'}/>
+    }
     return (
-        <Login buttonState={false} formik={formik}/>
-    );
+        <Login messageError={messageError} isLoading={isLoading} formik={formik}/>
+    )
+    ;
 }
 
 export default  LoginContainer;
