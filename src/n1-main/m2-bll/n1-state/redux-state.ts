@@ -6,6 +6,8 @@ import {passwordRecoveryReducer} from "../n2-reducers/password-recovery-reducer"
 import {profileReducer} from "../n2-reducers/profile-reducer";
 import { registrationReducer } from "../n2-reducers/registration-reducer";
 import {appReducer} from "../n2-reducers/app-reducer";
+import { reducer as formReducer } from 'redux-form'
+
 export type ReduxStateType = ReturnType<typeof reducersBatch>
 
 
@@ -19,7 +21,7 @@ let  reducersBatch = combineReducers({
     profile: profileReducer,
     registration: registrationReducer,
     appReducer: appReducer,
-
+    form: formReducer
 });
 
 
@@ -30,5 +32,7 @@ let state = store.getState()
 
 let dispatch = store.dispatch
 
+// @ts-ignore
+window.store = store
 
 

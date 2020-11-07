@@ -24,11 +24,11 @@ export const loginReducer = (state: InitialStateType = initialState, action: Act
 export const setLoginDataAC = (data: {login:string, password:string, rememberMe:boolean}) => ({ type: 'SET-LOGIN-DATA', data } as const);
 export const loginTC = (data: {login:string, password:string, rememberMe:boolean}) => (dispatch: Dispatch) => {
         dispatch(setLoginDataAC(data))
-        LoginAPI.login({email: data.login, password: data.password, rememberMe:data.rememberMe})
+      /*  LoginAPI.login({email: data.login, password: data.password, rememberMe:data.rememberMe})
             .then((res)=>{
                 console.log(res)
             })
             .catch((res)=>{
                 console.log('error' , res)
-            })
+            })*/
 }
